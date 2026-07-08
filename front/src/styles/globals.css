@@ -1,0 +1,22 @@
+/* Styles globaux + design tokens, appliqués à toute la page. */
+:root {
+  /* Thème sombre, cohérent avec l'éditeur Monaco (style VSCode). */
+  --bg: #1e1e1e; /* fond général (comme l'éditeur) */
+  --panel-bg: #252526; /* fond des zones (files, logs, console…) */
+  --border: #3c3c3c;
+  --title-green: #b6f5c4;
+  --text: #d4d4d4;
+  --text-dim: #9a9a9a; /* texte secondaire / placeholders */
+
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}

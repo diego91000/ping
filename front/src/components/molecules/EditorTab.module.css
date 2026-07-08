@@ -1,0 +1,30 @@
+/* Un onglet de la barre d'onglets de l'éditeur. */
+.tab {
+  display: inline-flex;
+  align-items: center;
+  background: #2d2d2d;
+  border-right: 1px solid #1e1e1e;
+  white-space: nowrap;
+}
+
+.active {
+  background: #1e1e1e;
+}
+
+.label {
+  padding: 6px 8px;
+  border: none;
+  background: none;
+  color: var(--text-dim);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.active .label {
+  color: var(--text);
+}
+
+.dot {
+  color: #e0c060;
+  font-size: 10px;
+}

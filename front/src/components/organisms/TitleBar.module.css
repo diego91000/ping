@@ -1,0 +1,28 @@
+/* Barre de titre verte en haut, sur toute la largeur. */
+.titlebar {
+  background: var(--title-green);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 12px;
+}
+
+.name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0b2e17; /* texte foncé, lisible sur le vert clair */
+}
+
+.logout {
+  padding: 4px 10px;
+  background: rgba(11, 46, 23, 0.12);
+  border-color: rgba(11, 46, 23, 0.22);
+  color: #0b2e17;
+}
+
+.logout:hover:not(:disabled) {
+  border-color: #0b2e17;
+}

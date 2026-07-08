@@ -1,0 +1,34 @@
+stages:
+  - test
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+  POSTGRES_DB: ping
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: postgres
+  QUARKUS_DATASOURCE_JDBC_URL: "jdbc:postgresql://postgres:5432/ping"
+  # Cache npm dans le projet pour qu'il soit conservé entre les jobs.
+  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+
+test:
+  stage: test
+  image: maven:3-eclipse-temurin-21
+  services:
+    - postgres:16
+  retry: 2
+  cache:
+    key: ping-deps
+    paths:
+      - .m2/repository
+      - .npm
+  before_script:
+    # L'image Maven ne fournit ni Node ni Python :
+    #  - Node : tests front (Vitest)
+    #  - python3 : les tests de l'endpoint /api/exec exécutent réellement du Python
+    - apt-get update
+    - apt-get install -y curl python3
+    - curl -fsSL https://deb.nodesource.com/setup_22.x | bash -
+    - apt-get install -y nodejs
+  script:
+    # Lance backend (Maven) + frontend (Vitest) via le script unique.
+    - ./test.sh

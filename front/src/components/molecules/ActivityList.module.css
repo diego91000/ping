@@ -1,0 +1,36 @@
+/* Liste d'activité type terminal (monospace, défilement auto en bas).
+   Partagée par la Console (commandes) et les Logs (appels backend). */
+.list {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 12px;
+  color: var(--text);
+}
+
+.line {
+  padding: 1px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.prompt {
+  color: #6a9955;
+}
+
+.ok {
+  color: #4ec9b0;
+}
+
+.ko {
+  color: #f48771;
+}
+
+.time {
+  color: var(--text-dim);
+}
+
+.error {
+  color: #f48771;
+}

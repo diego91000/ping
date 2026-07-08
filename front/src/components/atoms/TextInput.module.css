@@ -1,0 +1,11 @@
+/* Champ de saisie texte de base (style accent bleu façon VSCode). */
+.input {
+  background: #1e1e1e;
+  border: 1px solid #007acc;
+  border-radius: 2px;
+  padding: 0 4px;
+  font: inherit;
+  font-size: 13px;
+  color: var(--text);
+  outline: none;
+}

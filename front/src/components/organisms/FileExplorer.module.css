@@ -1,0 +1,27 @@
+/* Corps de la zone Fichiers (hérite la taille de police de l'arbre). */
+.body {
+  flex: 1;
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
+/* Une ligne (utilisée pour le champ de création à la racine). */
+.row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Arbre des fichiers/dossiers. */
+.fileList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Les sous-dossiers sont décalés vers la droite (indentation). */
+.fileList ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 16px;
+}

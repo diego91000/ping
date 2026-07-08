@@ -1,0 +1,67 @@
+/* Zone Code : intégrée, sans encadré, façon éditeur VSCode (fond sombre). */
+.panel {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  padding: 0;
+  overflow: hidden;
+  background: #1e1e1e;
+  border-radius: 6px;
+}
+
+/* Barre d'onglets + bouton exécuter. */
+.toolbar {
+  display: flex;
+  align-items: center;
+  background: #252526;
+}
+
+.tabs {
+  display: flex;
+  flex: 1;
+  overflow-x: auto;
+}
+
+.run {
+  flex: none;
+  padding: 0 12px;
+  border: none;
+  background: none;
+  color: #4ec9b0;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.run:hover:not(:disabled) {
+  color: #6fe0c8;
+}
+
+.run:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.error {
+  margin: 0;
+  padding: 2px 8px;
+  color: #f48771;
+  font-size: 12px;
+}
+
+/* Corps : l'éditeur Monaco remplit tout l'espace restant. */
+.body {
+  flex: 1;
+  min-height: 0;
+}
+
+/* Message quand aucun fichier n'est ouvert. */
+.empty {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  text-align: center;
+  color: #888888;
+  background: #1e1e1e;
+}

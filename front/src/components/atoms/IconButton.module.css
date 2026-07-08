@@ -1,0 +1,37 @@
+/* Bouton icône seul (émoji / symbole), libellé accessible obligatoire. */
+.iconButton {
+  padding: 0 4px;
+  line-height: 1;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.iconButton:hover:not(:disabled) {
+  color: var(--text);
+}
+
+.iconButton:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* Tailles (taille de l'icône). */
+.md {
+  font-size: 13px;
+}
+
+.lg {
+  font-size: 15px;
+}
+
+/* Variante encadrée : petit bouton bordé (ex. « remonter »). */
+.boxed {
+  padding: 2px 8px;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}

@@ -1,0 +1,48 @@
+/* Onde sonore : retour visuel des actions dans la zone Commande. */
+.waveform {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  height: 40px;
+  margin-bottom: 8px;
+}
+
+.bar {
+  width: 4px;
+  height: 6px;
+  border-radius: 2px;
+  background: var(--text-dim);
+}
+
+/* Succès : onde verte, ample et calme. */
+.ok .bar {
+  background: #4ec9b0;
+  animation: wave-ok 0.7s ease-in-out infinite;
+}
+
+/* Échec : onde rouge, courte et nerveuse. */
+.ko .bar {
+  background: #f48771;
+  animation: wave-ko 0.18s ease-in-out infinite;
+}
+
+@keyframes wave-ok {
+  0%,
+  100% {
+    height: 6px;
+  }
+  50% {
+    height: 30px;
+  }
+}
+
+@keyframes wave-ko {
+  0%,
+  100% {
+    height: 8px;
+  }
+  50% {
+    height: 20px;
+  }
+}

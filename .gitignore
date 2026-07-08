@@ -1,0 +1,10 @@
+target/
+*.log
+*.pem
+.mvn/
+.idea/
+.vscode/
+*.iml
+node_modules/
+soutenance/
+.npm/

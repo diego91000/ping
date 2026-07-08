@@ -1,0 +1,43 @@
+/* Bouton texte de base + variantes de couleur. */
+.button {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* Variante par défaut : gris (Valider / Annuler). */
+.default {
+  padding: 4px 8px;
+  background: #3a3d41;
+  color: var(--text);
+}
+
+.default:hover:not(:disabled) {
+  background: #45494e;
+}
+
+/* Variante primaire : vert (action principale, ex. « Ouvrir ce dossier »). */
+.primary {
+  padding: 6px;
+  background: var(--title-green);
+  color: #10240f;
+  border-color: transparent;
+  font-weight: 600;
+}
+
+/* Variante discrète : fond sombre bordé (action secondaire). */
+.subtle {
+  padding: 6px 12px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.subtle:hover:not(:disabled) {
+  border-color: var(--title-green);
+}

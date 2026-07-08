@@ -1,0 +1,6 @@
+/* Champ inline (création / renommage) dans l'arbre : icône + champ texte. */
+.nameInput {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}

@@ -1,0 +1,255 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 8px;
+  gap: 8px;
+}
+
+.title {
+  flex: none;
+}
+
+.viewControls {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 30px;
+  padding: 4px 6px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--panel-bg);
+}
+
+.viewLabel {
+  flex: none;
+  margin-right: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+
+.viewButton {
+  flex: none;
+  padding: 4px 8px;
+  font-size: 12px;
+  color: var(--text-dim);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.viewButton:hover,
+.viewButton:focus-visible {
+  color: var(--text);
+  border-color: var(--title-green);
+}
+
+.viewButtonActive {
+  color: var(--text);
+  background: #2f3f36;
+  border-color: var(--title-green);
+}
+
+.topArea,
+.bottomArea {
+  position: relative;
+  min-height: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.topArea {
+  flex: 1;
+}
+
+.bottomArea {
+  flex: none;
+}
+
+.files,
+.code,
+.commands,
+.logs,
+.cmd,
+.console {
+  min-width: 0;
+  min-height: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.resizeHandle {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10px;
+  margin: -3px 0;
+  color: var(--text-dim);
+  background: transparent;
+  border: 0;
+  cursor: row-resize;
+  user-select: none;
+}
+
+.resizeHandle::before,
+.resizeHandle::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.resizeIcon {
+  width: 28px;
+  margin: 0 8px;
+  text-align: center;
+  line-height: 10px;
+  opacity: 0;
+  border-radius: 999px;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  transition: opacity 120ms ease-in-out;
+}
+
+.resizeHandle:hover .resizeIcon,
+.resizeHandle:focus-visible .resizeIcon {
+  opacity: 1;
+}
+
+.resizeHandle:focus-visible {
+  outline: 2px solid var(--title-green);
+  outline-offset: 2px;
+}
+
+.verticalResizeHandle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  cursor: col-resize;
+  user-select: none;
+  transform: translateX(-50%);
+}
+
+.verticalResizeHandle::before {
+  content: '';
+  width: 1px;
+  height: 100%;
+  background: var(--border);
+}
+
+.verticalResizeIcon {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--panel-bg);
+  transition: opacity 120ms ease-in-out;
+  pointer-events: none;
+}
+
+.verticalResizeHandle:hover .verticalResizeIcon,
+.verticalResizeHandle:focus-visible .verticalResizeIcon {
+  opacity: 1;
+}
+
+.verticalResizeHandle:focus-visible {
+  outline: 2px solid var(--title-green);
+  outline-offset: -2px;
+}
+
+.mobileTabs {
+  display: none;
+}
+
+.tab {
+  flex: 1;
+  padding: 8px 4px;
+  font-size: 12px;
+  background: var(--panel-bg);
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.tabActive {
+  color: var(--text);
+  border-color: var(--title-green);
+}
+
+@media (max-width: 1024px) {
+  .app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .title {
+    order: 0;
+  }
+
+  .viewControls {
+    order: 1;
+  }
+
+  .topArea,
+  .bottomArea {
+    display: contents;
+  }
+
+  .resizeHandle,
+  .verticalResizeHandle {
+    display: none;
+  }
+
+  .code {
+    order: 2;
+    flex: 3;
+    min-height: 0;
+  }
+
+  .app .files,
+  .app .commands,
+  .app .logs,
+  .app .cmd,
+  .app .console {
+    order: 3;
+    flex: 1;
+    min-height: 0;
+    display: none;
+  }
+
+  .mobileTabs {
+    order: 4;
+    flex: none;
+    display: flex;
+    gap: 4px;
+    padding-top: 4px;
+  }
+
+  .app[data-panel='files'] .files,
+  .app[data-panel='command'] .cmd,
+  .app[data-panel='console'] .console,
+  .app[data-panel='logs'] .logs,
+  .app[data-panel='help'] .commands {
+    display: flex;
+  }
+}

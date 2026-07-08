@@ -1,0 +1,38 @@
+/* Cadre commun à toutes les zones : encadré + titre (+ actions) + contenu. */
+.panel {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  background: var(--panel-bg);
+}
+
+.title {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* En-tête avec titre + boutons d'action à droite. */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.header .title {
+  margin: 0;
+}
+
+.actions {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.panel:focus-visible {
+  outline: 2px solid var(--title-green);
+  outline-offset: 2px;
+}
