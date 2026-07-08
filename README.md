@@ -19,7 +19,7 @@ The frontend handles:
 
 ## ⚠️ Project Status
 
-Functional prototype. The full edit-save-run cycle works end to end (explorer, editor, voice commands, Python execution). Some pitch items were deliberately scoped out: eye-tracking control is not implemented, the frontend auto-logs in with a demo account, and execution is limited to Python.
+Functional prototype. The full login-edit-save-run cycle works end to end (login page, explorer, editor, voice commands, Python execution). Some pitch items were deliberately scoped out: eye-tracking control is not implemented and execution is limited to Python.
 
 ## Tech Stack
 
@@ -59,6 +59,13 @@ Quick start (PostgreSQL container + backend on :8080 + frontend on :5173):
 ./run.sh
 ```
 
+Then open `http://localhost:5173` and log in with the demo account seeded at startup:
+
+```text
+login:    admin.root
+password: adminpwd
+```
+
 Manual backend:
 
 ```bash
@@ -69,7 +76,7 @@ mvn -q package -DskipTests
 java -jar target/quarkus-app/quarkus-run.jar
 ```
 
-Backend alone can also run with `docker compose up`. Swagger UI: `http://localhost:8080/q/swagger-ui`. Demo account: `admin.root` / `adminpwd` (seeded at startup).
+Backend alone can also run with `docker compose up`. Swagger UI: `http://localhost:8080/q/swagger-ui`.
 
 Tests:
 
@@ -90,7 +97,6 @@ Tests:
 ## Features (Incomplete / TODO)
 
 - Eye-tracking control (voice control was prioritized)
-- Real login page (frontend currently auto-logs in with the demo account)
 - Execution of languages other than Python
 - Persistent per-user UI preferences
 
